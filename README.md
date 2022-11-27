@@ -222,6 +222,7 @@ NODE_API_MODULE(helloModule, Init)
 ```
 Don't forget to delete the ``Build``folder and rebuild with ``node-gyp``
 
+In ``index.js``
 ```js
 const myAddon = require('./helloModule.node');
 console.log(myAddon.helloWorld('everyone'));
