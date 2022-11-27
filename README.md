@@ -28,18 +28,18 @@ Here is a small tutorial to use c++ with NodeJs!
   
   Enter his commands :
   ```
-    npm install -g node-gyp
+  npm install -g node-gyp
   ```
   ```
-    npm config set python python3.10
+  npm config set python python3.10
   ```
   ```
-    npm config set msvs_version 2017
+  npm config set msvs_version 2017
   ```
   ```
-      Set-ExecutionPolicy Unrestricted -Force
+  Set-ExecutionPolicy Unrestricted -Force
   ```
-# Create your project
+# Create your First project
  
  1) You can now go or create your folder that will contain your project
   
@@ -81,10 +81,82 @@ Write inside
 }
 ```
 - **target_name** : is the ``.node`` name that will be returned when compiling
-- **sources** : is the location of each cpp file to compile
+- **sources** : is the location of each ``.cpp`` file to compile
 - **include_dirs** : the script will retrieve the ``node-addon-api`` content to compile correctly
 - **Others** : mandatory files to have no problem
 
+  4) Create your First C++ script
+
+We of course we create a Hello World function
+
+I advise you to rename your files like this, to understand better :
+
+``name_module.cpp`` -> ``hello.cpp``
+``name_module.h`` -> ``hello.h``
+
+Folder : ``helloWorld``
+
+
+In the ``binding.gyp``, write:
+
+```py
+{
+  "targets": [
+    {
+      "target_name": "helloModule",
+      "cflags!": [ "-fno-exceptions" ],
+      "cflags_cc!": [ "-fno-exceptions" ],
+      "sources": [
+        "./helloWorld/hello.cpp",
+        "./helloWorld/index.cpp"
+      ],
+      "include_dirs": [
+        "<!@(node -p \"require('node-addon-api').include\")"
+      ],
+      'defines': [ 'NAPI_DISABLE_CPP_EXCEPTIONS' ],
+    }
+  ]
+}
+```
+
+In ``hello.cpp`` write :
+```cpp
+#include <string>
+#include "hello.h"
+
+std::string helloWorld() {
+  return "Hello World !!!";
+}
+```
+
+In ``hello.h`` write :
+```h
+#include <string>
+
+std::string helloWorld();
+}
+```
+
+In ``index.cpp`` write :
+```cpp
+#include <napi.h>
+#include <string>
+#include "hello.h" //get the header of your function
+
+Napi::String helloWorldFonc(const Napi::CallbackInfo& info) { //create the new function who recovers the argument with Callback
+    Napi::Env env = info.Env();
+    std::string result = helloWorld(); //your function -> hello.cpp
+    return Napi::String::New(env, result);
+}
+Napi::Object Init(Napi::Env env, Napi::Object exports) { //Object for export your script on nodeJs
+    exports.Set(
+        Napi::String::New(env, "helloWorld"), //name of function for nodeJs (const hello = require('./helloModule.node').helloWorld();
+        Napi::Function::New(env, helloWorldFonc) //the fonction create just before width callBack
+    );
+    return exports;
+}
+NODE_API_MODULE(helloModule, Init) //out name (the same as in "binding") and Init == exports
+```
 
 # Contact
 
