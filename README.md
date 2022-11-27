@@ -13,63 +13,44 @@
 
 # About
 
-Small [NodeJS](https://nodejs.org/) & [ThreeJS](https://threejs.org/) script created in one evening. 
-Aiming to return an array with the position of several stars with their colors, this is generated randomly.
+Here is a small tutorial to use c++ with NodeJs!
 
-The script fetches the array and renders the galaxy on the client side with [ThreeJS](https://threejs.org/).
+# Installation on Windows
 
-Viewable [here](https://wartro89.github.io/galaxy-generator-nodejs/public/)
+1) Install [Visual Studio Tools](https://visualstudio.microsoft.com/downloads/)
+  - Select Desktop Environment C++ and Click on install
 
-<img width="100%" src="https://user-images.githubusercontent.com/25512932/160088977-3e828c17-1a7d-49e6-a15c-67cdecd51c56.gif" alt="screen">
+2) Install [Python3.10](https://www.python.org/downloads/release/python-3100/)
 
-<div id="uti1"></div>
+3) Execute Windows Power Shell in Administrator
+  (If you watch this tutorial I assume you have already installed NodeJS and Npm otherwise do it)
+  
+  Enter his commands :
+  ```
+    npm install -g node-gyp
+  ```
+  ```
+    npm config set python python3.10
+  ```
+  ```
+    npm config set msvs_version 2017
+  ```
+  ```
+      Set-ExecutionPolicy Unrestricted -Force
+  ```
+4) Create your project
+  You can now go or create your folder that will contain your project
+  
+  On the terminal enter :
+  ```
+  npm init
+  ```
+  It's up to you to fill in with the right arguments...
+  Then enter
+  ```
+  npm install -S node-addon-api
+  ```
 
-# Use [1]
-
-If you just want to use the generate (backend)
-
-[Install](https://nodejs.dev/learn/how-to-install-nodejs) nodeJs, if not done
-
-Install package:
-```npm install fs```
-
-Do a ``require`` function of the  ``generate.js``  file in the folder ``/server``;
-
-Example : 
-
-```js
-const galaxy = require('./server/generate.js');
-const arrayStars = galaxy();
-```
-
-The function ``galaxy()`` returns the default number of stars (12,000) if you want to change the number and other parameters do this:
-
-```
-const arrayStars = galaxy({nbrStar:16000}); //return array of 16000 stars
-```
-
-Other parameters :
-
-* branch : Number of branch
-
-* vWidth : Galaxy width variation
-
-* vHeitght : Galaxy height variation
-
-* vCore : Core variation (height and width)
-
-# Use [2]
-
-If you want to use everything you just have to transfer the contents of the repository to a folder on your pc.
-
-[Install](https://nodejs.dev/learn/how-to-install-nodejs) nodeJs, if not done
-
-And install packages
-```
-npm install fs express http
-```
-
-Look at <a href="#uti1">Utilization [1]</a> to be able to change galaxy function settings.
 
 # Contact
 
