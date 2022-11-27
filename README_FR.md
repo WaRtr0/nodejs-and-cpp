@@ -15,7 +15,7 @@
 
 Voici un petit tuto pour utiliser du C++ avec NodeJs!
 
-Je vais vous montrez comment créer un petit addon C++, avec `Napi` qui permet le lier à NodeJs.
+Je vais, vous montrez comment créer un petit addon C++, avec `Napi` qui permet le lier à NodeJs.
 
 Nous utiliserons `node-gyp`pour compiler le tout.
 
