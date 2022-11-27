@@ -43,15 +43,15 @@ Nous utiliserons `node-gyp`pour compiler le tout.
   ```
   Set-ExecutionPolicy Unrestricted -Force
   ```
-# Créer votre premier Project
+# Créer votre premier Projet
  
  1) Aller ou créer un dossier contenant votre projet
   
-  Dans le termine entrer :
+  Dans le terminal entrer :
   ```
   npm init
   ```
-  Je vous laisse compléter ce qu'il vous demande
+  Je vous laisse compléter ce qu'il vous demande.
 
   Puis entrer
   ```
@@ -64,7 +64,7 @@ Nous utiliserons `node-gyp`pour compiler le tout.
 
   3) Créer un fichier à la racine ``binding.gyp``
   
-Ecrire à l'intérieur :
+Écrire à l'intérieur :
 
 ```py
 {
