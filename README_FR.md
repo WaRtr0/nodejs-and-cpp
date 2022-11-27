@@ -22,13 +22,13 @@ Nous utiliserons `node-gyp`pour compiler le tout.
 # Installation sur Windows
 
 1) Installer [Visual Studio Tools](https://visualstudio.microsoft.com/downloads/)
-    - Selectionner `Desktop Environment C++` et cliquer sur installer
+    - Sélectionner `Desktop Environment C++` et cliquer sur installer
 
 2) Installer [Python3.10](https://www.python.org/downloads/release/python-3100/)
 
 3) Exécuter le Power sheel de windows en administrateur.
   
-  (Je suppose que vous avez déjà installer NodeJs et npm, sinon faites le!)
+  (Je suppose que vous avez déjà installé NodeJs et npm, sinon faites le!)
   
   Entrer les commandes suivantes:
   ```
