@@ -14,7 +14,9 @@
 # About
 
 Here is a small tutorial to use c++ with NodeJs!
+
 I'll show you how to create a small C++ addon, with `Napi` that allows binding.
+
 We will use `node-gyp` to compile everything.
 
 # Installation on Windows
