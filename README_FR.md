@@ -92,7 +92,7 @@ Nous utiliserons `node-gyp`pour compiler le tout.
 - **include_dirs** :le script va récupérer ``node-addon-api`` pour correctement compiler avec Napi
 - **Others** : est des paramètres obligatoires pour que le script fonctionne correctement
 
-  4) Créer votre premier module C++
+4) Créer votre premier module C++
 
 Bien évidemment nous allons créer la classique fonction Hello World !
 
