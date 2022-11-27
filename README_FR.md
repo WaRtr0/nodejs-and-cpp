@@ -1,3 +1,7 @@
+[![Contributors][contributors-shield]][contributors-url]
+[![Stargazers][stars-shield]][stars-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
+
 <h1 align="center">NodeJS & C++ avec Node-Addon-Api</h1>
 
 [Node-Addon-Api](https://github.com/nodejs/node-addon-api/) - [NodeJS](https://nodejs.org/) - [node-gyp](https://github.com/nodejs/node-gyp)
