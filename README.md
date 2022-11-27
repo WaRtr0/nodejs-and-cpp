@@ -181,6 +181,53 @@ console.log(myAddon.helloWorld());
 ```
 Launch your file then admire the work 😎
 
+# Use arguments on this function
+
+In ``hello.cpp`` write :
+```cpp
+#include <string>
+#include "hello.h"
+
+std::string helloWorld( std::string Argument ) {
+  return "Hello" + Argument + " !!!";
+}
+```
+In ``hello.h`` write :
+```h
+#include <string>
+
+std::string helloWorld( std::string Argument );
+}
+```
+In ``index.cpp`` write :
+```cpp
+#include <napi.h>
+#include <string>
+#include "hello.h"
+
+Napi::String helloWorldFonc(const Napi::CallbackInfo& info) { // the arguments are stored here!!!
+    Napi::Env env = info.Env();
+    std::string Argument = (std::string) info[0].ToString(); // get the first argument
+    std::string result = helloWorld(Argument);
+    return Napi::String::New(env, result);
+}
+Napi::Object Init(Napi::Env env, Napi::Object exports) {
+    exports.Set(
+        Napi::String::New(env, "helloWorld"),
+        Napi::Function::New(env, helloWorldFonc)
+    );
+    return exports;
+}
+NODE_API_MODULE(helloModule, Init)
+```
+Don't forget to delete the ``Build``folder and rebuild with ``node-gyp``
+
+```js
+const myAddon = require('./helloModule.node');
+console.log(myAddon.helloWorld('everyone'));
+```
+And that's magic
+
 # Contact
 
 Discord : WaRtrO#6293
