@@ -39,9 +39,9 @@ Here is a small tutorial to use c++ with NodeJs!
   ```
       Set-ExecutionPolicy Unrestricted -Force
   ```
-4) Create your project
+# Create your project
  
-You can now go or create your folder that will contain your project
+ 1) You can now go or create your folder that will contain your project
   
   On the terminal enter :
   ```
@@ -52,12 +52,12 @@ You can now go or create your folder that will contain your project
   ```
   npm install -S node-addon-api
   ```
-5) Create a folder at the root of your project that will contain your C++ module
+  2) Create a folder at the root of your project that will contain your C++ module
       - Create ``name_module.cpp``  It will contain your script that nodeJs will use
       - Create ``name_module.h``  It will contain the header / declaration of your functions and constant of your file ``name_module.cpp``
       - Create ``index.cpp``  It will contain the script to link between c++ and nodeJs
 
-6) Create a file ``binding.gyp`` at the root
+  3) Create a file ``binding.gyp`` at the root
   
 Write inside
 
