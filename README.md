@@ -234,6 +234,8 @@ console.log(myAddon.helloWorld('everyone'));
 And that's magic
 
 Here I hope to have helped you...
+
+
 Other basic scripts are available on git, do not hesitate to look at them 🧐
 # Contact
 
