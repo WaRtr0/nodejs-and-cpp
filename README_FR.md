@@ -3,10 +3,10 @@
 [Node-Addon-Api](https://github.com/nodejs/node-addon-api/) - [NodeJS](https://nodejs.org/) - [node-gyp](https://github.com/nodejs/node-gyp)
 
 <div align="center">
-  <a href="https://github.com/WaRtrO89/node-and-cpp/blob/main/README.md">
+  <a href="https://github.com/WaRtrO89/nodejs-and-cpp/blob/main/README.md">
     <img src="https://user-images.githubusercontent.com/25512932/160092140-bee4eee1-e755-48b7-b220-1d94adf14e16.png" alt="en">
   </a>
-  <a href="https://github.com/WaRtrO89/node-and-cpp/blob/main/README_FR.md">
+  <a href="https://github.com/WaRtrO89/nodejs-and-cpp/blob/main/README_FR.md">
     <img src="https://user-images.githubusercontent.com/25512932/160092152-0ab75363-b38b-4a91-a745-e2aeb6741b4e.png" alt="fr">
   </a>
 </div>
@@ -14,7 +14,9 @@
 # About
 
 Voici un petit tuto pour utiliser du C++ avec NodeJs!
+
 Je vais vous montrez comment créer un petit addon C++, avec `Napi` qui permet lier à NodeJs.
+
 Nous utiliserons `node-gyp`pour compiler le tout.
 
 # Installation sur Windows
