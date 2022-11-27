@@ -11,7 +11,7 @@
   </a>
 </div>
 
-# About
+# À propos
 
 Voici un petit tuto pour utiliser du C++ avec NodeJs!
 
