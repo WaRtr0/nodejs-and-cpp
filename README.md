@@ -23,6 +23,7 @@ Here is a small tutorial to use c++ with NodeJs!
 2) Install [Python3.10](https://www.python.org/downloads/release/python-3100/)
 
 3) Execute Windows Power Shell in Administrator
+  
   (If you watch this tutorial I assume you have already installed NodeJS and Npm otherwise do it)
   
   Enter his commands :
@@ -50,6 +51,10 @@ Here is a small tutorial to use c++ with NodeJs!
   ```
   npm install -S node-addon-api
   ```
+5) Create a folder at the root of your project that will contain your C++ module
+      - Create ``name_module.cpp`` It will contain your script that nodeJs will use
+      - Create ``name_module.h`` It will contain the header / declaration of your functions and constant of your file 'name_module.cpp'
+      - Create ``index.cpp`` It will contain the script to link between c++ and nodeJs
 
 
 # Contact
