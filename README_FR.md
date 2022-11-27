@@ -85,16 +85,16 @@ Nous utiliserons `node-gyp`pour compiler le tout.
   ]
 }
 ```
-- **target_name** : est le nom du ``.node`` qui sera compiler à la fin
+- **target_name** : est le nom du ``.node`` qui sera compilé à la fin
 - **sources** : est l'emplacement des fichiers c++ que nous allons compiler
-- **include_dirs** :le script va récuperer ``node-addon-api`` pour correctement compiler avec Napi
+- **include_dirs** :le script va récupérer ``node-addon-api`` pour correctement compiler avec Napi
 - **Others** : est des paramètres obligatoires pour que le script fonctionne correctement
 
   4) Créer votre premier module C++
 
-Bien évidamment nous allons créer la classique fonction Hello World !
+Bien évidemment nous allons créer la classique fonction Hello World !
 
-Je vous conseille de renomer les fichiers comme ceci, pour plus facilement suivre :
+Je vous conseille de renommer les fichiers comme ceci, pour plus facilement suivre :
 
 ``name_module.cpp`` -> ``hello.cpp``
 
@@ -125,7 +125,7 @@ Dans le ``binding.gyp``, écrire:
 }
 ```
 
-Dans ``hello.cpp`` écrire :
+Dans ``hello.cpp`` écrit :
 ```cpp
 #include <string>
 #include "hello.h"
@@ -135,7 +135,7 @@ std::string helloWorld() {
 }
 ```
 
-Dans ``hello.h`` écrire :
+Dans ``hello.h`` écrit :
 ```h
 #include <string>
 
@@ -143,13 +143,13 @@ std::string helloWorld();
 }
 ```
 
-Dans ``index.cpp`` écrire :
+Dans ``index.cpp`` écrit :
 ```cpp
 #include <napi.h>
 #include <string>
-#include "hello.h" //Récupere le header, les déclaration de votre script
+#include "hello.h" //Récupère le header, les déclarations de votre script
 
-Napi::String helloWorldFonc(const Napi::CallbackInfo& info) { //Créer une nouvelle fonction qui récupère les argument avec le callBack
+Napi::String helloWorldFonc(const Napi::CallbackInfo& info) { //Créer une nouvelle fonction qui récupère les arguments avec le callBack
     Napi::Env env = info.Env();
     std::string result = helloWorld(); //Votre fonction -> hello.cpp
     return Napi::String::New(env, result);
@@ -157,28 +157,28 @@ Napi::String helloWorldFonc(const Napi::CallbackInfo& info) { //Créer une nouve
 Napi::Object Init(Napi::Env env, Napi::Object exports) { //Object pour exporte votre script sur nodeJs
     exports.Set(
         Napi::String::New(env, "helloWorld"), // le nom de la fonction que nous utiliserons sur nodejs (const hello = require('./helloModule.node').helloWorld();
-        Napi::Function::New(env, helloWorldFonc) //la fonction qui récupere les arguments et qui retourne le résultat de votre fonction c++
+        Napi::Function::New(env, helloWorldFonc) //la fonction qui récupère les arguments et qui retourne le résultat de votre fonction c++
     );
     return exports;
 }
-NODE_API_MODULE(helloModule, Init) //helloModule == Nom du fichier finale helloModule.node (le même présent dans target sur "binding.gyp") et Init == exports
+NODE_API_MODULE(helloModule, Init) //helloModule == Nom du fichier final helloModule.node (le même présent dans target sur "binding.gyp") et Init == exports
 ```
 Le script est terminé ! Manque plus qu'à le compiler...
-Tout sera compiler dans un fichier ``.node``
+Tout sera compilé dans un fichier ``.node``
 
-Sur le terminale, écrire :
+Sur le terminal, écrire :
 
 ``
 node-gyp configure
 ``
-and
+puis
 ``
 node-gyp build
 ``
 
 Puis récupérer le fichier ``.node`` dans `/Build/Release/helloModule.node` et glisser le à la racine de votre projet
 
-Puis utilis le dans ton fichier ``index.js`` !!!
+Puis utilise le dans ton fichier ``index.js`` !!!
 
 ```js
 const monAddon = require('./helloModule.node');
@@ -225,17 +225,18 @@ Napi::Object Init(Napi::Env env, Napi::Object exports) {
 }
 NODE_API_MODULE(helloModule, Init)
 ```
-N'oublie de supprimer le dossier``Build``et reconstruire avec le ``node-gyp``
+N'oublie pas de supprimer le dossier``Build``et reconstruire avec le ``node-gyp``
 
-Dans ``index.js``
+Dans ``index.js`` écrit :
 ```js
 const monAddon = require('./helloModule.node');
 console.log(monAddon.helloWorld('tout le monde'));
 ```
-Et voilà c'est magique
+Et voilà, c'est magique.
 
-J'espère vous avoir aider...
-Et n'hesite pas de regarde les autres script très basique présent dans le git🧐
+J'espère vous avoir aidé...
+
+Et n'hésite pas de regarder les autres scripts très basiques présents dans le git 🧐
 
 # Contact
 
