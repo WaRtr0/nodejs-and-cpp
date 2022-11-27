@@ -1,6 +1,6 @@
 <h1 align="center">NodeJS & C++ with Node-Addon-Api</h1>
 
-[Node-Addon-Api](https://github.com/nodejs/node-addon-api/) - [NodeJS](https://nodejs.org/)
+[Node-Addon-Api](https://github.com/nodejs/node-addon-api/) - [NodeJS](https://nodejs.org/) - [node-gyp](https://github.com/nodejs/node-gyp)
 
 <div align="center">
   <a href="https://github.com/WaRtrO89/node-and-cpp/blob/main/README.md">
@@ -14,6 +14,8 @@
 # About
 
 Here is a small tutorial to use c++ with NodeJs!
+I'll show you how to create a small C++ addon, with `Napi` that allows binding.
+We will use `node-gyp` to compile everything.
 
 # Installation on Windows
 
