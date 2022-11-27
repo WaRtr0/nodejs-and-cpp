@@ -242,3 +242,6 @@ Other basic scripts are available on git, do not hesitate to look at them 🧐
 # Contact
 
 Discord : WaRtrO#6293
+
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/maxence-morot
