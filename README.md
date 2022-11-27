@@ -18,7 +18,7 @@ Here is a small tutorial to use c++ with NodeJs!
 # Installation on Windows
 
 1) Install [Visual Studio Tools](https://visualstudio.microsoft.com/downloads/)
-  - Select Desktop Environment C++ and Click on install
+    - Select Desktop Environment C++ and Click on install
 
 2) Install [Python3.10](https://www.python.org/downloads/release/python-3100/)
 
@@ -40,7 +40,8 @@ Here is a small tutorial to use c++ with NodeJs!
       Set-ExecutionPolicy Unrestricted -Force
   ```
 4) Create your project
-  You can now go or create your folder that will contain your project
+ 
+You can now go or create your folder that will contain your project
   
   On the terminal enter :
   ```
@@ -52,9 +53,37 @@ Here is a small tutorial to use c++ with NodeJs!
   npm install -S node-addon-api
   ```
 5) Create a folder at the root of your project that will contain your C++ module
-      - Create ``name_module.cpp`` It will contain your script that nodeJs will use
-      - Create ``name_module.h`` It will contain the header / declaration of your functions and constant of your file ``name_module.cpp``
-      - Create ``index.cpp`` It will contain the script to link between c++ and nodeJs
+      - Create ``name_module.cpp``  It will contain your script that nodeJs will use
+      - Create ``name_module.h``  It will contain the header / declaration of your functions and constant of your file ``name_module.cpp``
+      - Create ``index.cpp``  It will contain the script to link between c++ and nodeJs
+
+6) Create a file ``binding.gyp`` at the root
+  
+Write inside
+
+```py
+{
+  "targets": [
+    {
+      "target_name": "nameModule",
+      "cflags!": [ "-fno-exceptions" ],
+      "cflags_cc!": [ "-fno-exceptions" ],
+      "sources": [
+        "./folder_contain_module/name_module.cpp",
+        "./folder_contain_module/index.cpp"
+      ],
+      "include_dirs": [
+        "<!@(node -p \"require('node-addon-api').include\")"
+      ],
+      'defines': [ 'NAPI_DISABLE_CPP_EXCEPTIONS' ],
+    }
+  ]
+}
+```
+- **target_name** : is the ``.node`` name that will be returned when compiling
+- **sources** : is the location of each cpp file to compile
+- **include_dirs** : the script will retrieve the ``node-addon-api`` content to compile correctly
+- **Others** : mandatory files to have no problem
 
 
 # Contact
