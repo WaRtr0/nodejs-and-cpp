@@ -1,5 +1,3 @@
-[![Contributors][contributors-shield]][contributors-url]
-[![Stargazers][stars-shield]][stars-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 <h1 align="center">NodeJS & C++ with Node-Addon-Api</h1>
@@ -244,12 +242,3 @@ Other basic scripts are available on git, do not hesitate to look at them 🧐
 # Contact
 
 Discord : WaRtrO#6293
-
-
-
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[contributors-url]: https://github.com/WaRtrO89/nodejs-and-cpp/graphs/contributors
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/WaRtrO89/nodejs-and-cpp/stargazers
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/maxence-morot
