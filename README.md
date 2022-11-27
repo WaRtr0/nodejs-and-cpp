@@ -155,8 +155,30 @@ Napi::Object Init(Napi::Env env, Napi::Object exports) { //Object to export your
     );
     return exports;
 }
-NODE_API_MODULE(helloModule, Init) //out name.node (the same as in "binding") and Init == exports
+NODE_API_MODULE(helloModule, Init) //out name.node (the same as in "binding.gyp") and Init == exports
 ```
+The script is finished, not very complicated...
+All that's left is to compile it into ``.node``
+
+On your terminal, write :
+
+``
+node-gyp configure
+``
+and
+``
+node-gyp build
+``
+
+Get the file generate ``.node`` in `/Build/Release/helloModule.node` and drag it to the root
+
+Use it on your ``index.js`` file !!!
+
+```js
+const myAddon = require('./helloModule.node');
+console.log(myAddon.helloWorld());
+```
+Launch your file then admire the work 😎
 
 # Contact
 
