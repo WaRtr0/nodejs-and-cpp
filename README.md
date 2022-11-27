@@ -53,7 +53,7 @@ Here is a small tutorial to use c++ with NodeJs!
   ```
 5) Create a folder at the root of your project that will contain your C++ module
       - Create ``name_module.cpp`` It will contain your script that nodeJs will use
-      - Create ``name_module.h`` It will contain the header / declaration of your functions and constant of your file 'name_module.cpp'
+      - Create ``name_module.h`` It will contain the header / declaration of your functions and constant of your file ``name_module.cpp``
       - Create ``index.cpp`` It will contain the script to link between c++ and nodeJs
 
 
