@@ -143,19 +143,19 @@ In ``index.cpp`` write :
 #include <string>
 #include "hello.h" //get the header of your function
 
-Napi::String helloWorldFonc(const Napi::CallbackInfo& info) { //create the new function who recovers the argument with Callback
+Napi::String helloWorldFonc(const Napi::CallbackInfo& info) { //create a new function who recovers the argument with Callback
     Napi::Env env = info.Env();
     std::string result = helloWorld(); //your function -> hello.cpp
     return Napi::String::New(env, result);
 }
-Napi::Object Init(Napi::Env env, Napi::Object exports) { //Object for export your script on nodeJs
+Napi::Object Init(Napi::Env env, Napi::Object exports) { //Object to export your script on nodeJs
     exports.Set(
-        Napi::String::New(env, "helloWorld"), //name of function for nodeJs (const hello = require('./helloModule.node').helloWorld();
-        Napi::Function::New(env, helloWorldFonc) //the fonction create just before width callBack
+        Napi::String::New(env, "helloWorld"), // function name for nodeJs (const hello = require('./helloModule.node').helloWorld();
+        Napi::Function::New(env, helloWorldFonc) //the fonction create just before with callBack
     );
     return exports;
 }
-NODE_API_MODULE(helloModule, Init) //out name (the same as in "binding") and Init == exports
+NODE_API_MODULE(helloModule, Init) //out name.node (the same as in "binding") and Init == exports
 ```
 
 # Contact
